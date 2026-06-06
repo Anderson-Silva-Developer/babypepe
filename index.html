@@ -1,0 +1,719 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Baby Pepe Coin • A Revolução dos Pequenos Sapos 🐸💚</title>
+    <meta name="description" content="Baby Pepe Coin - A memecoin mais fofa do ecossistema Solana. Junte-se à família Baby Pepe e vamos crescer juntos! 🚀">
+    <meta name="keywords" content="Baby Pepe, memecoin, Solana, pump.fun, criptomoeda, meme">
+    <meta property="og:title" content="Baby Pepe Coin">
+    <meta property="og:description" content="A memecoin mais fofa do ecossistema Solana.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0a5c2e 0%, #1a3a2a 50%, #0d2b1f 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Elementos decorativos flutuantes */
+        .floating {
+            position: fixed;
+            font-size: 2rem;
+            pointer-events: none;
+            animation: float 15s infinite ease-in-out;
+            z-index: 0;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            box-shadow: 0 0 60px rgba(168, 224, 99, 0.6);
+            animation: bounce 3s infinite ease-in-out;
+            transition: transform 0.3s;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #f9f295 0%, #e0c568 50%, #b8860b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .ticker {
+            display: inline-block;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            font-weight: bold;
+            border: 1px solid #a8e063;
+            margin-top: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #c8e6b5;
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Cards e seções */
+        .card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(168, 224, 99, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border-color: #a8e063;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-title span {
+            font-size: 2rem;
+        }
+
+        /* Grid de features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #a8e063;
+        }
+
+        /* Galeria de Memes */
+        .meme-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .meme-card {
+            background: rgba(0,0,0,0.4);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid rgba(168,224,99,0.3);
+        }
+
+        .meme-card:hover {
+            transform: scale(1.03);
+            border-color: #a8e063;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .meme-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .meme-card .meme-caption {
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #c8e6b5;
+            background: rgba(0,0,0,0.5);
+        }
+
+        /* Modal para imagem ampliada */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 20px;
+            border: 3px solid #a8e063;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #a8e063;
+            transform: scale(1.1);
+        }
+
+        /* Timer */
+        .timer-container {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(30,60,30,0.5));
+            border-radius: 30px;
+            padding: 2rem;
+        }
+
+        .timer-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .timer-box {
+            background: rgba(0,0,0,0.6);
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            min-width: 100px;
+        }
+
+        .timer-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: monospace;
+            color: #a8e063;
+        }
+
+        .timer-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Botão CTA */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #a8e063, #56ab2f);
+            color: #0a2a1a;
+            text-decoration: none;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 60px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+            box-shadow: 0 5px 20px rgba(86, 171, 47, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(86, 171, 47, 0.6);
+        }
+
+        /* Links sociais */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            background: rgba(255,255,255,0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(168,224,99,0.3);
+        }
+
+        .social-link:hover {
+            background: rgba(168,224,99,0.2);
+            border-color: #a8e063;
+            transform: translateY(-3px);
+        }
+
+        /* Tokenomics */
+        .tokenomics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tokenomics-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(168,224,99,0.3);
+        }
+
+        .tokenomics-label {
+            font-weight: bold;
+            color: #a8e063;
+        }
+
+        /* Roadmap */
+        .roadmap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .phase {
+            background: rgba(0,0,0,0.3);
+            padding: 1.2rem;
+            border-radius: 20px;
+            text-align: center;
+            border-left: 4px solid #a8e063;
+        }
+
+        .phase h4 {
+            color: #a8e063;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #8aac7a;
+            border-top: 1px solid rgba(168,224,99,0.2);
+            margin-top: 2rem;
+        }
+
+        /* Contrato/Ca */
+        .ca-box {
+            background: rgba(0,0,0,0.5);
+            padding: 1rem;
+            border-radius: 15px;
+            font-family: monospace;
+            word-break: break-all;
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .ca-box:hover {
+            background: rgba(168,224,99,0.2);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .logo {
+                width: 120px;
+                height: 120px;
+                font-size: 4rem;
+            }
+            .timer-box {
+                min-width: 70px;
+                padding: 0.5rem 1rem;
+            }
+            .timer-number {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .meme-card img {
+                height: 180px;
+            }
+        }
+
+        /* Animações extras */
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px #a8e063; }
+            50% { text-shadow: 0 0 20px #a8e063; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Elementos flutuantes decorativos -->
+    <div class="floating" style="top: 10%; left: 5%; animation-duration: 20s;">🐸</div>
+    <div class="floating" style="top: 70%; right: 3%; animation-duration: 18s;">🍼</div>
+    <div class="floating" style="top: 40%; right: 15%; animation-duration: 25s;">✨</div>
+    <div class="floating" style="bottom: 15%; left: 10%; animation-duration: 22s;">🚀</div>
+    <div class="floating" style="top: 85%; right: 20%; animation-duration: 16s;">💚</div>
+
+    <!-- Modal para imagem ampliada -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Imagem ampliada">
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <img src="imagens/meme1.jpg" alt="Baby Pepe Logo" onerror="this.src=''; this.parentElement.innerHTML='🐸🍼'">
+            </div>
+            <h1>Baby Pepe Coin</h1>
+            <div class="ticker">$BABYPEPE</div>
+            <div class="tagline">
+                🌱 O sapinho mais fofo do ecossistema Solana 🌱<br>
+                Das fraldas para a lua! 🚀
+            </div>
+        </div>
+
+        <!-- Contador Regressivo -->
+        <div class="timer-container">
+            <div class="timer-title">
+                🕒 Lançamento Oficial na Pump.fun 🕒
+            </div>
+            <div class="timer">
+                <div class="timer-box">
+                    <div class="timer-number" id="days">00</div>
+                    <div class="timer-label">Dias</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-number" id="hours">00</div>
+                    <div class="timer-label">Horas</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-number" id="minutes">00</div>
+                    <div class="timer-label">Minutos</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-number" id="seconds">00</div>
+                    <div class="timer-label">Segundos</div>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem;">
+                <a href="#" id="pumpLink" class="cta-button" target="_blank">
+                    🚀 Comprar Baby Pepe 🚀
+                </a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">⚠️ NÃO PERCA O PRESALE! ⚠️</p>
+        </div>
+
+        <!-- Features -->
+        <div class="card">
+            <div class="section-title">
+                <span>✨</span> Por que Baby Pepe?
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🐸</div>
+                    <h3>100x Potencial</h3>
+                    <p>O próximo grande meme do ecossistema Solana</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💎</div>
+                    <h3>Comunidade Forte</h3>
+                    <p>Família Baby Pepe unida até o fim</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Lançamento Justo</h3>
+                    <p>Sem pré-venda, sem times, 100% justo</p>
+                </div>                
+            </div>
+        </div>
+
+        <!-- GALERIA DE MEMES (IMAGENS ADICIONADAS AQUI) -->
+        <div class="card">
+            <div class="section-title">
+                <span>🎨</span> Galeria de Memes
+            </div>
+            <div class="meme-gallery">
+                <div class="meme-card" onclick="openModal('imagens/meme1.jpg')">
+                    <img src="imagens/meme1.jpg" alt="Meme Baby Pepe 1">
+                    <div class="meme-caption">Baby Pepe no berço 🐸🍼</div>
+                </div>
+                <div class="meme-card" onclick="openModal('imagens/meme2.jpg')">
+                    <img src="imagens/meme2.jpg" alt="Meme Baby Pepe 2">
+                    <div class="meme-caption">Baby Pepe na lua 🚀🌙</div>
+                </div>
+                <div class="meme-card" onclick="openModal('imagens/meme3.jpg')">
+                    <img src="imagens/meme3.jpg" alt="Meme Baby Pepe 3">
+                    <div class="meme-caption">Baby Pepe hype 💚📈</div>
+                </div>
+                <div class="meme-card" onclick="openModal('imagens/meme4.jpg')">
+                    <img src="imagens/meme4.jpg" alt="Meme Baby Pepe 4">
+                    <div class="meme-caption">Baby Pepe família unida 👨‍👩‍👧‍👦</div>
+                </div>
+                <div class="meme-card" onclick="openModal('imagens/meme3.jpg')">
+                    <img src="imagens/meme5.jpg" alt="Meme Baby Pepe 3">
+                    <div class="meme-caption">Baby Pepe hype 💚📈</div>
+                </div>
+                <div class="meme-card" onclick="openModal('imagens/meme4.jpg')">
+                    <img src="imagens/meme6.jpg" alt="Meme Baby Pepe 4">
+                    <div class="meme-caption">Baby Pepe família unida 👨‍👩‍👧‍👦</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; opacity: 0.8;">
+                💚 Clique em qualquer meme para ampliar! 💚
+            </p>
+        </div>
+       
+
+        <!-- Roadmap -->
+        <div class="card">
+            <div class="section-title">
+                <span>🗺️</span> Roadmap do Baby
+            </div>
+            <div class="roadmap">
+                <div class="phase">
+                    <h4>🎯 Fase 1</h4>
+                    <p>Lançamento + Marketing inicial<br>Comunidade 10k membros</p>
+                </div>
+                <div class="phase">
+                    <h4>📈 Fase 2</h4>
+                    <p>Graduação Raydium<br>CMC + CG Listings</p>
+                </div>
+                <div class="phase">
+                    <h4>🌍 Fase 3</h4>
+                    <p>Primeira CEX<br>Parcerias estratégicas</p>
+                </div>
+                <div class="phase">
+                    <h4>🚀 Fase 4</h4>
+                    <p>Ecosystema Baby Pepe<br>NFTs + Staking</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contract Address (placeholder) -->
+        <div class="card">
+            <div class="section-title">
+                <span>📜</span> Contract Address (CA)
+            </div>
+            <div class="ca-box" id="caBox" onclick="copyCA()">
+                <span id="caText">BABYPEPE... Em breve após o lançamento!</span>
+            </div>
+            <p style="text-align: center; font-size: 0.8rem; margin-top: 0.5rem;">
+                👆 Clique para copiar o endereço do contrato
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Baby Pepe Coin. Todos os direitos reservados.</p>
+            <p style="margin-top: 0.5rem;">🐸 Nada aqui é conselho financeiro. Compre e venda com responsabilidade! 🐸</p>
+            <p style="margin-top: 0.5rem;">💚 O sapinho mais fofo da Solana blockchain 💚</p>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // CONFIGURAÇÕES QUE VOCÊ PRECISA ALTERAR
+        // ============================================
+        
+        // 1. DATA DE LANÇAMENTO (Ano, Mês-1, Dia, Hora, Minuto, Segundo)
+        const launchDate = new Date(2026, 0, 15, 20, 0, 0); // 15 de Janeiro de 2026 - 20:00
+        
+        // 2. APÓS CRIAR A MOEDA NO PUMP.FUN, COLE O LINK AQUI:
+        const pumpFunLink = "https://pump.fun/"; // COLE O LINK COMPLETO APÓS CRIAR
+        
+        // 3. ENDEREÇO DO CONTRATO (CA) - COLE APÓS CRIAR:
+        const contractAddress = "BABYPEPE... Em breve após o lançamento!";
+        
+        // ============================================
+        // NÃO MEXA DAQUI PARA BAIXO (SISTEMA)
+        // ============================================
+        
+        // Atualiza o link do botão
+        const pumpLinkElement = document.getElementById("pumpLink");
+        if (pumpLinkElement && pumpFunLink) {
+            pumpLinkElement.href = pumpFunLink;
+        }
+        
+        // Atualiza o CA
+        const caTextElement = document.getElementById("caText");
+        if (caTextElement && contractAddress) {
+            caTextElement.innerText = contractAddress;
+        }
+        
+        // Função para copiar CA
+        function copyCA() {
+            const ca = contractAddress;
+            if (ca && ca !== "BABYPEPE... Em breve após o lançamento!") {
+                navigator.clipboard.writeText(ca).then(() => {
+                    const originalText = caTextElement.innerText;
+                    caTextElement.innerText = "✅ Copiado! ✅";
+                    setTimeout(() => {
+                        caTextElement.innerText = originalText;
+                    }, 2000);
+                }).catch(() => {
+                    alert("Clique manualmente e copie o endereço: " + ca);
+                });
+            } else {
+                alert("📍 Endereço do contrato será disponibilizado no lançamento!");
+            }
+        }
+        
+        // Funções do Modal de Imagem
+        function openModal(imageSrc) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.classList.add("active");
+            modalImg.src = imageSrc;
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.classList.remove("active");
+        }
+        
+        // Tornar funções globais
+        window.copyCA = copyCA;
+        window.openModal = openModal;
+        window.closeModal = closeModal;
+        
+        // Fechar modal com ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Contador regressivo
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+            
+            if (distance < 0) {
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+                if (pumpLinkElement && pumpFunLink && pumpFunLink !== "https://pump.fun/") {
+                    pumpLinkElement.innerHTML = "🔴 AO VIVO NA PUMP.FUN 🔴";
+                }
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        console.log("🐸 Baby Pepe Coin - O sapinho mais fofo da Solana!");
+    </script>
+</body>
+</html>
